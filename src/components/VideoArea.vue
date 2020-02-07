@@ -16,21 +16,26 @@
           />
         </div>
         <div class="row">
-          <div class="col-md-12 my-3">
-            <button type="button" class="btn btn-primary" @click="onJoin">Join</button>
-            <button type="button" class="btn btn-primary" @click="onLeave">Leave</button>
-            <button
+          <div class="col-md-12 my-3 btn-wrapper">
+            <md-button class="md-raised md-primary" @click="onJoin">Join</md-button>
+            <md-button
               type="button"
-              class="btn btn-primary"
+              class="md-raised md-primary"
+              v-if="isVideoPlaying"
+              @click="onLeave"
+            >Leave</md-button>
+            <md-button
+              type="button"
+              class="md-raised md-primary"
               v-if="isVideoPlaying"
               @click="onCapture"
-            >Capture Photo</button>
-            <button
+            >Capture Photo</md-button>
+            <md-button
               type="button"
-              class="btn btn-primary"
+              class="md-raised md-primary"
               v-if="isVideoPlaying"
               @click="onShareScreen"
-            >Share Screen</button>
+            >Share Screen</md-button>
           </div>
         </div>
       </div>
@@ -90,4 +95,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.btn-wrapper {
+  padding-top: 10px;
+}
+// .video-list {}
+// .video-item {}
 </style>
